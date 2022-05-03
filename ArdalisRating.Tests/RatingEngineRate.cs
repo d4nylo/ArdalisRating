@@ -43,4 +43,21 @@ public class RatingEngineRate
 
         Assert.Equal(0, result);
     }
+
+    [Fact]
+    public void ReturnsDefaultPolicyFromEmptyString()
+    {
+        var inputJson = "{}";
+        var serializer = new JsonPolicySerializer();
+
+        var result = serializer.GetPolicyFromJsonString(inputJson);
+
+        var policy = new Policy();
+        AssertPoliciesEqual(result, policy);
+    }
+
+    private void AssertPoliciesEqual(Policy result, Policy policy)
+    {
+        throw new System.NotImplementedException();
+    }
 }
