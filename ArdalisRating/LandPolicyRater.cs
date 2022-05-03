@@ -1,20 +1,16 @@
 namespace ArdalisRating;
 
-public class LandPolicyRater
+public class LandPolicyRater : Rater
 {
-    private readonly RatingEngine _engine;
-    private ConsoleLogger _logger;
-
-    public LandPolicyRater(RatingEngine engine, ConsoleLogger logger)
+    public LandPolicyRater(RatingEngine engine, ConsoleLogger logger) : base(engine, logger)
     {
-        _engine = engine;
-        _logger = logger;
     }
 
-    public void Rate(Policy policy)
+    public override void Rate(Policy policy)
     {
         _logger.Log("Rating LAND policy...");
         _logger.Log("Validating policy.");
+        
         if (policy.BondAmount == 0 || policy.Valuation == 0)
         {
             _logger.Log("Land policy must specify Bond Amount and Valuation.");
