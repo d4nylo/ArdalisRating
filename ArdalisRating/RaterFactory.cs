@@ -12,7 +12,7 @@ public class RaterFactory
         }
         catch
         {
-            return null;
+            return new UnknownPolicyRater(engine, engine.Logger);
         }
     }
 }

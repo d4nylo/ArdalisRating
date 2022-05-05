@@ -24,7 +24,7 @@ public class RatingEngine
         Logger.Log("Loading policy.");
 
         // load policy - open file policy.json
-        string policyJson = PolicySource.GetPolicyFromSource();
+        var policyJson = PolicySource.GetPolicyFromSource();
 
         var policy = PolicySerializer.GetPolicyFromJsonString(policyJson);
 
