@@ -2,7 +2,7 @@ namespace ArdalisRating;
 
 public class Policy
 {
-    public PolicyType Type { get; set; }
+    public string Type { get; set; }
 
     #region Life Insurance
 
@@ -22,6 +22,12 @@ public class Policy
 
     #endregion
 
+    #region Flood In Addition To Land
+
+    public int ElevationAboveSeaLevelFeet { get; set; }
+
+    #endregion
+
     #region Auto
 
     public string Make { get; set; }
@@ -30,11 +36,5 @@ public class Policy
     public int Miles { get; set; }
     public decimal Deductible { get; set; }
 
-    #endregion
-    
-    #region Flood In Addition To Land
-    
-    public int ElevationAboveSeaLevelFeet { get; set; }
-    
     #endregion
 }
